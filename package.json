@@ -1,0 +1,60 @@
+{
+  "name": "react-koa-template",
+  "version": "1.0.0",
+  "description": "React + Koa Template",
+  "main": "src/server/index.ts",
+  "repository": "https://github.com/Artmann/react-koa-template",
+  "author": "Christoffer Artmann <Artgaard@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "concurrently \"tsc\" \"webpack -p\"",
+    "dev": "concurrently \"nodemon\" \"webpack -d -w\"",
+    "start": "node dist/server/index.js"
+  },
+  "nodemon": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules"
+    ],
+    "verbose": true,
+    "execMap": {
+      "ts": "node --require ts-node/register"
+    },
+    "watch": [
+      "src/server"
+    ],
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "ts,tsx"
+  },
+  "dependencies": {
+    "koa": "^2.11.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^8.0.8",
+    "koa-static": "^5.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.3",
+    "@types/koa-logger": "^3.1.1",
+    "@types/koa-router": "^7.4.0",
+    "@types/koa-static": "^4.0.1",
+    "@types/node": "^13.13.5",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "concurrently": "^5.2.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "html-webpack-plugin": "^4.3.0",
+    "nodemon": "^2.0.3",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^7.0.2",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
