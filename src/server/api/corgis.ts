@@ -1,6 +1,6 @@
-import { Context, Next } from 'koa';
+import { Context } from 'koa';
 
-export async function corgis(context: Context, next: Next): Promise<void> {
+export async function corgis(context: Context): Promise<void> {
   context.body = {
     corgis: [
       { id: 1, image: 'OIejsKL.jpg', text: 'Meet Rio, my newest coworker.' },

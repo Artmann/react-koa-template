@@ -1,6 +1,6 @@
 import app from './app';
 
-(function() {
+(function(): void {
   const port = process.env.PORT || '3000';
 
   app.listen(port, () => {

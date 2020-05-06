@@ -68,7 +68,7 @@ it('Shows a picture of a Corgi', () => {
 
 ## Linting
 
-TBD
+You can make sure you and your team keep the code style consistent by running `yarn lint`. This is powered by ESLint and rules can be added or removed in `.eslintrc.js`.
 
 ## Deploy
 
