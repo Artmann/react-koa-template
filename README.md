@@ -51,7 +51,20 @@ You might have noticed that the CSS bundle is gigantic in size. This is because 
 
 ## Testing
 
-TBD
+The entire application is tested using Jest and you can use either `yest test` or `yest test:watch` to run them. For the API endpoints, supertest is used to do integration tests. An example of this can be found in `src/server/api/corgi.spec.ts`.
+
+For the React part, [Testing Library](https://testing-library.com/docs/react-testing-library/example-intro) is the way to go. It can be used to render components and make assertions againt them.
+
+```ts
+it('Shows a picture of a Corgi', () => {
+  render(<CorgiCard image='corgi.png' text='Describing text.' />);
+
+  const image = screen.getByRole('img');
+
+  expect(image).toHaveAttribute('alt', 'Describing text.');
+  expect(image).toHaveAttribute('src', '/images/corgi.png');
+});
+```
 
 ## Linting
 
