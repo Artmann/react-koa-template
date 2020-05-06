@@ -1,4 +1,5 @@
 const CopyPlugin = require('copy-webpack-plugin');
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { join } = require('path');
 
@@ -20,13 +21,25 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         loader: 'source-map-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          ExtractCssChunks.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          'postcss-loader'
+        ]
       }
     ]
   },
   output: {
     filename: 'app.[contenthash].js',
     path: join(__dirname, 'dist', 'app')
-
   },
   plugins: [
     new CopyPlugin([
@@ -37,7 +50,8 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       template: join(__dirname, 'src', 'app', 'index.html')
-    })
+    }),
+    new ExtractCssChunks()
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
