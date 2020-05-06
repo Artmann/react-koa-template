@@ -25,7 +25,7 @@ export default function App() {
   }, []);
 
   return (
-    <div>
+    <div className="container flex flex-col items-center mx-auto py-8 md:flex-row md:flex-wrap">
       {
         corgis.map(corgi => <CorgiCard image={ corgi.image } text={ corgi.text } key={ corgi.id } />)
       }
