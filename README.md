@@ -70,6 +70,10 @@ it('Shows a picture of a Corgi', () => {
 
 You can make sure you and your team keep the code style consistent by running `yarn lint`. This is powered by ESLint and rules can be added or removed in `.eslintrc.js`.
 
+## Server Side Rendering
+
+To improve the performance and to help crawlers, your React app will be rendered server side. When a page is requested the server will render the HTML from `src/app/index.html`. It will also render the `App` component and insert it's markup into the final HTML document.
+
 ## Deploy
 
 The whole application can be built with the command
