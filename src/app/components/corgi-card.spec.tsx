@@ -11,7 +11,7 @@ describe('CorgiCard', () => {
     const image = screen.getByRole('img');
 
     expect(image).toHaveAttribute('alt', 'Describing text.');
-    expect(image).toHaveAttribute('src', '/images/corgi.png');
+    expect(image).toHaveAttribute('src', '/statics/images/corgi.png');
   });
 
   it('Has a describing text.', () => {

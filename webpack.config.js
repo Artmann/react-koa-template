@@ -39,16 +39,18 @@ module.exports = {
   },
   output: {
     filename: 'app.[contenthash].js',
-    path: join(__dirname, 'dist', 'app')
+    path: join(__dirname, 'dist', 'statics'),
+    publicPath: '/statics'
   },
   plugins: [
     new CopyPlugin([
       {
         from: join(__dirname, 'src', 'app', 'public'),
-        to: join(__dirname, 'dist', 'app')
+        to: join(__dirname, 'dist', 'statics')
       }
     ]),
     new HtmlWebpackPlugin({
+      base: 'statics',
       template: join(__dirname, 'src', 'app', 'index.html')
     }),
     new ExtractCssChunks()
