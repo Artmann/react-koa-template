@@ -11,7 +11,7 @@ export default function CorgiCard({ image, text }: CorgiCardProps): ReactElement
       <img
         alt={ text }
         className="block border-gray-400 h-auto mb-4 object-cover w-full md:h-64 md:w-48"
-        src={ `/images/${ image }`}
+        src={ `/statics/images/${ image }`}
         />
 
       <div className="w-full md:w-48">
