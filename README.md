@@ -12,6 +12,8 @@ By using this template for your next project, you
 
 Want more? Take a look at the [Demo](https://react-koa-template.herokuapp.com/), it got tons of cute dogs.
 
+![Lighthouse Audit](https://i.imgur.com/Nyk2o1f.png)
+
 ## Quick Start
 
 Create your repository from this template or clone it as is.
